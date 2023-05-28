@@ -1,0 +1,22 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.table-row-selected {
+  background-color: rgb(216, 215, 215);
+}
+
+.table-row-hover {
+  background-color: rgb(236, 236, 236);
+}
+
+.table-cell {
+  padding: 8px 10px;
+}

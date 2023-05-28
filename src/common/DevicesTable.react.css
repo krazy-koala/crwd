@@ -1,0 +1,33 @@
+.devices-table {}
+
+.devices-table-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.devices-table-selected-label {
+  margin-left: 20px;
+}
+
+.devices-table-download-button {
+  margin-left: 50px;
+}
+
+.device-status-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-top: 2px;
+}
+
+.device-status-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.device-status-icon-available {
+  background-color: rgb(11, 209, 11);
+}
