@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
 import Checkbox from './Checkbox.react';
 import Table from './Table.react';
@@ -13,44 +13,48 @@ function DevicesTable({ data }) {
   const [selected, setSelected] = useState(new Set());
   const [showModal, setShowModal] = useState(false);
 
-  const columns = [
-    {
-      key: 'checkbox',
-      title: '',
-      render: (_, item) => (
-        <Checkbox
-          checked={selected.has(item.name)}
-          onChange={() => {
-            const newSelected = new Set(selected);
-            if (selected.has(item.name)) {
-              newSelected.delete(item.name);
-            } else {
-              newSelected.add(item.name);
-            }
-            setSelected(newSelected);
-          }}
-        />
-      ),
-    },
-    { key: 'name', title: 'Name' },
-    { key: 'device', title: 'Device' },
-    { key: 'path', title: 'Path' },
-    {
-      key: 'status-icon',
-      title: '',
-      render: (_, item) => (
-        <DeviceStatusIcon status={item.status} />
-      ),
-      cellStyle: { textAlign: 'right' },
-    },
-    {
-      key: 'status',
-      title: 'Status',
-      render: (_, item) => (
-        <DeviceStatusLabel status={item.status} />
-      )
-    },
-  ];
+  const columns = useMemo(
+    () => [
+      {
+        key: 'checkbox',
+        title: '',
+        render: (_, item) => (
+          <Checkbox
+            checked={selected.has(item.name)}
+            onChange={() => {
+              const newSelected = new Set(selected);
+              if (selected.has(item.name)) {
+                newSelected.delete(item.name);
+              } else {
+                newSelected.add(item.name);
+              }
+              setSelected(newSelected);
+            }}
+            ariaLabel="Select row checkbox"
+          />
+        ),
+      },
+      { key: 'name', title: 'Name' },
+      { key: 'device', title: 'Device' },
+      { key: 'path', title: 'Path' },
+      {
+        key: 'status-icon',
+        title: '',
+        render: (_, item) => (
+          <DeviceStatusIcon status={item.status} />
+        ),
+        cellStyle: { textAlign: 'right' },
+      },
+      {
+        key: 'status',
+        title: 'Status',
+        render: (_, item) => (
+          <DeviceStatusLabel status={item.status} />
+        )
+      },
+    ],
+    [selected]
+  );
 
   return (
     <div className="devices-table">
@@ -70,9 +74,7 @@ function DevicesTable({ data }) {
             setSelected(new Set());
           }
         }}
-        onDownloadSelected={() => {
-          setShowModal(true);
-        }}
+        onDownloadSelected={() => setShowModal(true)}
       />
       <Table
         data={data}
@@ -92,10 +94,13 @@ function SelectedDevicesModal(props) {
     setShowModal
   } = props;
 
-  const columns = [
-    { key: 'device', title: 'Device' },
-    { key: 'path', title: 'Path' },
-  ];
+  const columns = useMemo(
+    () => [
+      { key: 'device', title: 'Device' },
+      { key: 'path', title: 'Path' },
+    ],
+    []
+  );
 
   return (
     <Modal
@@ -119,6 +124,7 @@ function DevicesTableHeader({ data, selected, onSelectAll, onDownloadSelected })
         checked={selected.size === data.length}
         indeterminate={selected.size > 0 && selected.size !== data.length}
         onChange={onSelectAll}
+        ariaLabel="Select all checkbox"
       />
       <SelectedDevicesLabel selected={selected} />
       <DownloadSelectedButton

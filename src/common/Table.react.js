@@ -20,13 +20,14 @@ import './Table.react.css';
  * };
  */
 
-// TODO: Table accessibility.
 function Table({ data, columns, toggleRowHighlight, highlightOnHover, tableStyle }) {
   return (
     <div style={{...tableStyle}}>
       <table className="table">
-        <tbody>
+        <thead>
           <TableHeader columns={columns} />
+        </thead>
+        <tbody>
           <TableRows
             data={data}
             columns={columns}

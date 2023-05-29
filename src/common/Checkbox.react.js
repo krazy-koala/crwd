@@ -8,6 +8,7 @@ import { useEffect, useRef } from 'react';
  *  onChange: (e: HTMLEvent) => void,
  *  label?: string,
  *  indeterminate?: boolean,
+ *  ariaLabel?: string,
  * }
  */
 
@@ -16,7 +17,8 @@ function Checkbox(props) {
     checked,
     indeterminate,
     onChange,
-    label
+    label,
+    ariaLabel,
   } = props;
   const ref = useRef();
 
@@ -34,6 +36,7 @@ function Checkbox(props) {
         type="checkbox"
         checked={checked}
         onChange={onChange}
+        ariaLabel={ariaLabel}
       />
       {label}
     </label>
