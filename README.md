@@ -1,8 +1,11 @@
-# Getting Started with Create React App
+# UI Take Home Test
+
+## Overview
+![cwrd-test-app](https://github.com/krazy-koala/crwd/assets/134880990/7c376760-e938-4154-946a-cc9f4191d818)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Running the project
 
 In the project directory, you can run:
 
@@ -14,8 +17,23 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+
 ## High-level architecture
-<Diagram goes here>
+
+### Diagram
+The image provided below shows the relationship between the major UI components in the project.  This should help
+the reviewers navigate the code as they read through it.
+
+A few points to note:
+- The Table component is a generic component that simply takes an array of data (any shape) and a list of column objects.  Together, these inputs
+allow Table to render the rows and columns using semantic HTML.  Internally, the Table component doesn't need to know anything about
+the shape of each item in data other than that it should be an object.
+- The DevicesTable component is less generic and has other components and logic that are specific to viewing, selecting, and downloading devices.
+It wraps around the Table component and provides the required data and columns to it.
+
+![crwd-test-architecture](https://github.com/krazy-koala/crwd/assets/134880990/556a8208-e82b-4c0c-9bd8-4874bce29bec)
+
+###
 
 ## Testing the component manually
 
@@ -52,6 +70,11 @@ This section assumes that the project is already up and running in the browser v
    - The Select All checkbox should change from indeterminate to checked.
 5. Click on all checked checkboxes in the table to deselect all rows manually.  After all rows are deselected, the UI should be in its original state with
    no checkboxes anywhere checked and display 'None Selected' to the right of the Select All checkbox.
+6. Click on any individual checkbox in the checkbox column to put the Select All checkbox into an indeterminate state.
+7. Click on the Select All checkbox:
+   - The Select All checkbox should change to checked state.
+   - All checkboxes in the checkbox column should change to the checked state.
+8. Clicking on Select All checkbox should deselect all checkboxes in the checkbox column.
 
 #### Download Selected Devices
 ##### Visibility of Download Selected button
