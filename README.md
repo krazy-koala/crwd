@@ -97,3 +97,7 @@ This test case assumes that there are selected rows with a Status column value o
    - The body section should display a table with the selected rows.  Each row has two columns - Device and Path.  Verify these are the same
      as what's selected in the DevicesTable.
    - The footer section displays two buttons to the right - Cancel and Confirm.  Clicking either of these will close the modal.
+3. While the Modal is open, focus should be trapped inside the modal
+   - Pressing Tab or Shift + Tab should cycle focus through the different buttons and should not leave the modal.
+   - The user should not be able to interact with components outside of the modal.
+   - Clicking on the overlay should not close the modal.  This is by design.
