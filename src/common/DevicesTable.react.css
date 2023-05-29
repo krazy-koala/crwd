@@ -1,10 +1,9 @@
-.devices-table {}
-
 .devices-table-header {
   display: flex;
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #ccc;
+  height: 40px;
 }
 
 .devices-table-selected-label {
