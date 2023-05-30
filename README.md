@@ -3,13 +3,21 @@
 ## Overview
 ![cwrd-test-app](https://github.com/krazy-koala/crwd/assets/134880990/7c376760-e938-4154-946a-cc9f4191d818)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Environment setup
+
+The following should be installed on your local machine before moving on to Running the project:
+- NodeJS (v18.16.0)
+- NPM (v9.5.1)
+
+The dependency versions mentioned above are the latest as of 05/26/2023.
 
 ### Running the project
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
