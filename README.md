@@ -5,7 +5,7 @@
 
 ### Environment setup
 
-The following should be installed on your local machine before moving on to Running the project:
+The following should be installed on your local machine before moving on to 'Running the project' section:
 - NodeJS (v18.16.0)
 - NPM (v9.5.1)
 
@@ -13,9 +13,11 @@ The dependency versions mentioned above are the latest as of 05/26/2023.
 
 ### Running the project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+If you haven't already, install the node_modules that this project requires.  Open your CLI and run
 
-In the project directory, you can run:
+#### `npm i`
+
+To start the project, you can run:
 
 #### `npm start`
 
