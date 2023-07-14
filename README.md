@@ -1,5 +1,3 @@
-# UI Take Home Test
-
 ## Overview
 ![cwrd-test-app](https://github.com/krazy-koala/crwd/assets/134880990/7c376760-e938-4154-946a-cc9f4191d818)
 
